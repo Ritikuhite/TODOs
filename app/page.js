@@ -3,10 +3,8 @@
 'use client'
 import React, { useState } from 'react';;
 
- 
-const page = () => {
+const Page = () => {
   // creating variable's for two way binding  
-  const [name, setName] = useState("Ritik");
   const [title,setTitle] =useState('');
   const [desc, setDesc] = useState('');
   const [mainTodo, setmainTodo] = useState([])
@@ -38,17 +36,18 @@ if(mainTodo.length>0){
     <li key={i} className='flex items-center justify-between'>
     <div className="flex items-center justify-between mb-4 w-2/3" > 
     <h3 className='font-mono text-4xl
-     bg-slate-500'>{t.title}</h3>
+    bg-slate-500'>{t.title}</h3>
     <p className='font-mono  text-2xl bg-slate-500'>{t.desc}</p>
     </div>
     <button onClick={()=>deleteHandler(i)} type="button" className='bg-red-500 rounded-lg px-4 py-2 text-xl text-white'>Delete</button>
     </li>
   )
 })}
+
   return (
     <>
     <div className='bg-black'>
-      <h1 className='text-white text-xl p-5'>{name}'s Todos</h1>
+      <h1 className='text-white text-xl p-5'>My Todos</h1>
     </div>
     <div className="m-2">
     <form onSubmit={submitHandler}>
@@ -76,4 +75,4 @@ if(mainTodo.length>0){
   )
 }
 
-export default page
+export default Page
